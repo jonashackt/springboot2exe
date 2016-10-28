@@ -15,7 +15,8 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBootTest(
 		classes = Springboot2exeApplication.class,
-		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+		webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT,
+		properties = {"server.port=8080"}
 )
 public class Springboot2exeApplicationTests {
 
@@ -25,7 +26,7 @@ public class Springboot2exeApplicationTests {
 		RestTemplate restTemplate = new RestTemplate();
 
 		// When
-		String response = restTemplate.getForObject("http://localhost:8080/restexamples/hello", String.class);
+		String response = restTemplate.getForObject("http://localhost:8080/springboot2exe/hello", String.class);
 
 		// Then
 		assertEquals(Controller.RESPONSE, response);
@@ -39,7 +40,7 @@ public class Springboot2exeApplicationTests {
 
 		given() // can be ommited when GET only
 				.when() // can be ommited when GET only
-				.get("http://localhost:8080/restexamples/hello")
+				.get("http://localhost:8080/springboot2exe/hello")
 				.then()
 				.statusCode(HttpStatus.SC_OK)
 				.assertThat()
