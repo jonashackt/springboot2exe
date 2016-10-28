@@ -21,17 +21,17 @@ public class SwaggerConfiguration {
 				.apiInfo(apiInfo())
 				.select()
 				.apis(RequestHandlerSelectors.any())
-				.paths(PathSelectors.ant("/restexamples/*"))
+				.paths(PathSelectors.ant("/springboot2exe/*"))
 				.build();
 	}
 	
 	private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Restexamples Demo API")
-                .description("A really interesting API, that you should know!")
+                .title("Spring Boot to Windows exe")
+                .description("Simple REST Service just for Demo purposes to show how to create a exe from a Spring Boot app")
                 .termsOfServiceUrl("http://springfox.io")
                 .license("Apache License Version 2.0")
-                .licenseUrl("https://github.com/jonashackt/restexamples/blob/master/LICENSE")
+                .licenseUrl("https://github.com/jonashackt/springboot2exe/blob/master/LICENSE")
                 .version("2.0")
                 .build();
     }

@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/restexamples")
+@RequestMapping("/springboot2exe")
 public class Controller {
 
-    public static final String RESPONSE = "Hello Rest-User!";
+    public static final String RESPONSE = "Hello crazy Windows User!";
     
     @RequestMapping(path="/hello", method=RequestMethod.GET)
     public String helloWorld() {
